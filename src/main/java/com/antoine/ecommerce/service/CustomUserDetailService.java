@@ -1,7 +1,6 @@
 package com.antoine.ecommerce.service;
 
 import com.antoine.ecommerce.model.User;
-import com.antoine.ecommerce.model.CustomUserDetail;
 import com.antoine.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,4 +19,5 @@ public class CustomUserDetailService implements UserDetailsService {
         user.orElseThrow(()-> new UsernameNotFoundException("User not register"));
         return user.map(CustomUserDetail::new).get();
     }
+
 }

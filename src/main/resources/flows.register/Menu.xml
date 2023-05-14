@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+    <!-- Main page  -->
+    <view-state id="MenuPrincipal"
+                view="flows.register/Menu"
+                redirect="false">
+        <transition on="shop" to="Shop" />
+        <transition on="add_cat"
+                    to="addCat" />
+        <transition on="add_prod"
+                    to="addProduct" />
+    </view-state>
+
+
+    <!-- Themes page -->
+    <view-state id="addCat"
+                view="../templates/categoriesAdd.html"
+                model="Category">
+    </view-state>
+
+
+    <!-- Themes page -->
+    <view-state id="addProduct"
+                view="../templates/productsAdd.html"
+                model="Product">
+    </view-state>
+
+
+    <!--  Exit -->
+    <end-state id="Sortie" view="redirect:/" />
+
+    <!-- Transitions communes -->
+    <global-transitions>
+        <!-- Menu principal -->
+        <transition on="Menu"
+                    to="MenuPrincipal" />
+
+        <!-- Sortie application -->
+        <transition to="Sortie" />
+    </global-transitions>
+</flow>

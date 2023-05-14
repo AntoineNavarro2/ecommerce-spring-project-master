@@ -1,5 +1,6 @@
-package com.antoine.ecommerce.model;
+package com.antoine.ecommerce.service;
 
+import com.antoine.ecommerce.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

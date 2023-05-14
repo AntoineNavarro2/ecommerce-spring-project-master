@@ -48,5 +48,11 @@ public class User {
     public User(){
 
     }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
 
 }
